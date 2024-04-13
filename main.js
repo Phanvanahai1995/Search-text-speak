@@ -1,6 +1,7 @@
 "use strict";
 
 const msgEl = document.getElementById("msg");
+const btnEL = document.querySelector(".btn");
 
 window.SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -52,10 +53,12 @@ function onSpeak(e) {
     default:
       alert("Not search value");
   }
-
-  window.location.reload();
 }
 
 // Speak result
 
 recognition.addEventListener("result", onSpeak);
+
+// Reload
+
+btnEL.addEventListener("click", () => window.location.reload());
